@@ -1,4 +1,11 @@
 //Toggle Bar
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () =>{
+    menuIcon.classList.toggle('fas');
+    navbar.classList.toggle('active');
+}
 
 
 
@@ -23,9 +30,8 @@ window.onscroll = () =>{
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
             });
-        }
-        
-    });
+        }  
+    })
     
 
  let header =  document.querySelector('header');
