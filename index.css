@@ -80,15 +80,14 @@ section {
 }
 .home-content{
     max-width: 60rem;
+    z-index: 99;
 }
 .home-content h1{
     font-size: 4.6rem;
     font-weight: 700;
     line-height: 1.3;
 }
-.home-content h1 span{
-    color: var(--text-bg-color);
-}
+
 .home-content .text-animated{
     position: relative;
     width: 32.8rem;
@@ -99,7 +98,55 @@ section {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-bg-color);
+    background-image: linear-gradient(var(--main-bg-color), var(--main-bg-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: typingname 6s linear infinite;
+    animation-delay: 2s;
 }
+.home-content .text-animated h3::before{
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-bg-color);
+    z-index: -1;
+    animation: typingcursor 6s linear infinite;
+    animation-delay: 2s;
+}
+/*keyframe for animation name */
+@keyframes typingname {
+    0%, 10%, 100% {
+        background-position: -33rem 0;
+
+    }
+    65%, 85% {
+        background-position: 0 0;
+
+    }
+}
+/*keyframe for animation cursor */
+@keyframes typingcursor {
+        0%, 10%, 100% {
+        width: 0;
+
+    }
+
+    65%, 78%, 85% {
+        width: 100%;
+        opacity: 1;
+
+    }
+
+    75%, 81%{
+        opacity: 0;
+    } 
+    
+}
+
+
 .home-content p{
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
@@ -108,8 +155,9 @@ section {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 22.5rem;
+    width: 30rem;
     height: 5rem;
+    text-align: center;
 }
 .btn-box .btn{
     position: relative;
@@ -206,6 +254,10 @@ section {
 .home-imageHover:hover{
     background: var(--bg-color);
     opacity: .8;
+}
+.home-content h1 span{
+    color: var(--main-bg-color);
+    font-size: 2.9rem;
 }
 /*About Section*/
 .about{
@@ -645,5 +697,60 @@ section {
     .navbar.active a{
         transform: translateX(0);
         transition-delay: .25s;
+    }
+
+    .home-imageHover{
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+@media (max-width:520px){
+    html{
+        font-size: 50%;
+    }
+    .home-content h1{
+        display: flex;
+        flex-direction: column;
+    }
+    .home-sci{
+        width: 160px;
+    }
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+    }
+    
+}
+@media (max-width:462px){
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+    .education{
+        padding: 10rem 4% 5rem 5%;
+    }
+    .contactus form .input-box .input-field{
+        width: 100%;
+    }
+    .footer{
+        flex-direction: column-reverse;
+    }
+    .footer p{
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+@media (max-width:371px){
+    .home{
+        justify-content: center;
+    }
+    .home-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .home-content h1{
+        font-size: 5rem;
     }
 }

@@ -37,4 +37,8 @@ window.onscroll = () =>{
  let header =  document.querySelector('header');
 
  header.classList.toggle('sticky', window.scrollY > 100);
+ 
+//remove toggle after function the list of navbar links\
+menuIcon.classList.remove('fas');
+navbar.classList.remove('active');
 } 
