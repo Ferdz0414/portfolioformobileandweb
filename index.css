@@ -301,6 +301,15 @@ section {
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-bg-color);
     border-right: .2rem solid var(--main-bg-color);
+    animation: circlespin 8s linear infinite;
+    animation-delay: 3s;
+}
+/*anime for cirle spin */
+@keyframes circlespin{
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
 }
 .about-content{
     text-align: center;
