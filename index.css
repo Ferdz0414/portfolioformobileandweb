@@ -9,10 +9,11 @@
     font-family: 'Times New Roman', Times, serif;
 }
 :root{
-    --bg-color:#0e0e0e;
+    --bg-color:#1D242B;
     --second-bg-color: #273039;
     --text-bg-color: rgb(248, 246, 246);
-    --main-bg-color: rgb(201, 82, 82);
+    --main-bg-color: #0077C0;
+    --btn-color-background: #748DAE;
 }
 html{
     font-size: 62.5%;
@@ -156,7 +157,7 @@ section {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 30rem;
+    width: 35rem;
     height: 5rem;
     text-align: center;
 }
@@ -195,7 +196,7 @@ section {
     left: 0;
     width: 0;
     height: 100%;
-    background-color: rgb(99, 5, 5);
+    background-color: var(--btn-color-background);
     z-index: -1;
     transition: .5s;
 }
@@ -505,7 +506,66 @@ section {
 .skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span{
     width: 30%;
 }
-/*Contact us Section and Design*/
+/*Project Section and Design*/
+.project{
+    padding-bottom: 7rem;
+}
+.project-container{
+    position: relative;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.image-project{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+    position: relative;
+    background: var(--bg-color);
+    padding: 10px;
+    animation: coloranime 1s ease infinite;
+    animation-delay: 10s;
+    box-shadow: 0 0 0 10px var(--btn-color-background), var(--main-bg-color);
+}
+@keyframes coloranime{
+    0%{
+        transform: translateX(0%);
+        box-shadow: 0 0 0 10px var(--btn-color-background);
+
+    }
+    50%{
+        transform: translateX(-10%);
+        box-shadow: 0 0 0 10px var(--second-bg-color);
+    }
+    100%{
+        transform: translateX(10%);
+        box-shadow: 0 0 0 10px var(--second-bg-color);
+    }
+}
+.titleprojects{
+    font-size: 3.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+.project-container  .btn-box.btns a{
+    width: 100%;
+}
+
+.image-project  .btn-box.btns{
+    font-size: 2.5rem;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    color: var(--text-bg-color);
+    margin-top: 2px;
+
+}
+/*Contact Us Section and Design*/
 .contactus{
     min-height: auto;
     padding-bottom: 7rem;
