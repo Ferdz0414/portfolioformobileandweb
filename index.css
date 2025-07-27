@@ -512,9 +512,6 @@ section {
 }
 .project-container{
     position: relative;
-    display: block;
-    align-items: center;
-    justify-content: center;
 }
 .image-project{
     display: flex;
