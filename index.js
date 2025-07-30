@@ -42,3 +42,25 @@ window.onscroll = () =>{
 menuIcon.classList.remove('fas');
 navbar.classList.remove('active');
 } 
+
+//dark mode and light mode
+let lightmode = localStorage.getItem('lightmode')
+const lightmodes = document.getElementById('lightmodes')
+
+
+const enableLightmode = () => {
+    document.body.classList.add('lightmode')
+    localStorage.setItem('lightmode', 'active')
+}
+
+const disableLightmodes = () => {
+    document.body.classList.remove('lightmode')
+    localStorage.setItem('lightmode', null)
+}
+
+if (lightmode === 'active') enableLightmode()
+
+lightmodes.addEventListener('click', () => {
+    lightmode = localStorage.getItem('lightmode')
+    lightmode !== "active" ? enableLightmode() : disableLightmodes()
+})
